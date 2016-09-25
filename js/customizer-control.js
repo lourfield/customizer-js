@@ -1,7 +1,5 @@
 ( function( $ ) {
 
-	
-
 	wp.customize.bind( 'ready', function() {
 
 		var customize = this;
@@ -85,12 +83,18 @@
 
 			customize.previewer.bind( 'preview-edit', function( data ) {
 
-				var data    = JSON.parse( data );
+				var data = JSON.parse( data );
 				var control = customize.control( data.name );
 
 				control.focus( {
 					completeCallback : function() {
+
+						setTimeout( function() {
+							control.container.addClass( 'shake animated' );
+						}, 300 )
+
 						if ( data.color === true ) {
+
 							setTimeout( function() {
 
 								var container = control.container;

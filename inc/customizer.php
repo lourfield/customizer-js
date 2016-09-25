@@ -57,6 +57,7 @@ add_action( 'customize_register', 'cjs_customize_register' );
  */
 function cjs_customize_control_js() {
 	wp_enqueue_script( 'tuts-customizer-control', get_template_directory_uri() . '/js/customizer-control.js', array( 'customize-controls', 'jquery' ), null, true );
+	wp_enqueue_style( 'animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', array(), '3.5.2' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'cjs_customize_control_js' );
 
